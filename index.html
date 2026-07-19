@@ -453,7 +453,7 @@
                     </div>
                 </div>
 
-                <!-- NETWORK ARCHITECTURE IMAGE CONTAINER WITH INTERACTIVE MODAL & DETAILS -->
+                <!-- NETWORK ARCHITECTURE IMAGE CONTAINER WITH DETAILS -->
                 <div class="mt-8 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden bg-slate-50 dark:bg-slate-950 p-4 md:p-6 shadow-inner">
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                         <div>
@@ -471,19 +471,19 @@
 
                     <!-- Diagram Render Window -->
                     <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 p-2 shadow-md">
-                        <!-- Image Element referencing Arsitektur-DLN.jfif verbatim -->
+                        <!-- Referencing Arsitektur-DLN.jfif -->
                         <img 
+                            id="architectureDiagram"
                             src="Arsitektur-DLN.jfif" 
                             alt="Arsitektur Jaringan Koneksi Pusat - Cabang PT DUTA LINTAS NUSA (EOIP + IPSEC VPN)" 
                             class="w-full h-auto object-cover rounded-xl transition duration-500 group-hover:scale-[1.01]"
-                            onerror="this.src='https://placehold.co/1000x500/0f172a/ffffff?text=Diagram+Arsitektur-DLN+Image';"
                         />
                         <div class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur text-white px-2.5 py-1.5 rounded-lg text-xs font-medium no-print pointer-events-none">
                             <i class="fa-solid fa-circle-info mr-1"></i> Referensi: Arsitektur-DLN.jfif
                         </div>
                     </div>
 
-                    <!-- Interactive Diagram Explorer (Guide Map to elements in Arsitektur-DLN) -->
+                    <!-- Interactive Diagram Explorer -->
                     <div class="mt-6">
                         <p class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3">Panduan Interaktif Elemen Arsitektur</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -565,7 +565,7 @@
                                     Processor Intel Xeon, RAM Minimum 32GB, Storage SSD 1TB yang dikonfigurasi dengan RAID System (Mirroring / RAID 1) untuk toleransi kerusakan disk.
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_dell" value="1" min="1" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_dell" value="1" min="0" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">1 Unit</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -585,7 +585,7 @@
                                     Core Router kelas enterprise dengan akselerasi hardware IPsec, bertugas menangani enkripsi tunnel dari seluruh cabang secara simultan.
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_mt_core" value="1" min="1" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_mt_core" value="1" min="0" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">1 Unit</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -605,7 +605,7 @@
                                     Branch Router performa tinggi untuk menginisiasi koneksi EoIP + IPsec Dial-Out menuju IP Publik Statis Head Office. (Semarang, Surabaya, Medan, Lampung, Cibitung).
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_mt_branch" value="5" min="1" max="20" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_mt_branch" value="5" min="0" max="20" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">5 Unit</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -625,7 +625,7 @@
                                     Sistem Operasi Server Enterprise legal, mendukung Virtualisasi Hyper-V untuk memisahkan Database utama dan environment hosting virtual.
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_win_os" value="1" min="1" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_win_os" value="1" min="0" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">1 Lisensi</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -645,7 +645,7 @@
                                     Upgrade Engine Database dari versi 2000 ke 2019 demi optimalisasi query, stabilitas data, keamanan mutakhir, dan kompatibilitas penuh.
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_sql_server" value="1" min="1" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_sql_server" value="1" min="0" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">1 Lisensi</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -653,6 +653,26 @@
                                 </td>
                                 <td id="total_sql_server" class="p-4 text-right font-bold font-mono text-brand-600 dark:text-brand-400">
                                     1,250,000
+                                </td>
+                            </tr>
+
+                            <!-- Microsoft RDS (Baru Ditambahkan) -->
+                            <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+                                <td class="p-4 font-semibold text-slate-900 dark:text-white">
+                                    Microsoft RDS Server 2019 50 User CAL/Device
+                                </td>
+                                <td class="p-4 text-xs text-slate-600 dark:text-slate-400">
+                                    Lisensi Remote Desktop Services (RDS) Client Access License untuk mendukung akses desktop/aplikasi simultan hingga 50 pengguna/perangkat secara legal dan aman.
+                                </td>
+                                <td class="p-4 text-center">
+                                    <input type="number" id="qty_rds" value="1" min="0" max="10" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <span class="hidden print:inline font-mono">1 Lisensi</span>
+                                </td>
+                                <td class="p-4 text-right font-mono text-xs">
+                                    1,750,000
+                                </td>
+                                <td id="total_rds" class="p-4 text-right font-bold font-mono text-brand-600 dark:text-brand-400">
+                                    1,750,000
                                 </td>
                             </tr>
 
@@ -665,7 +685,7 @@
                                     Penyediaan bandwidth simetris khusus di Head Office dilengkapi dengan 1 IP Publik Statis sebagai jangkar utama koneksi VPN.
                                 </td>
                                 <td class="p-4 text-center">
-                                    <input type="number" id="qty_isp" value="1" min="1" max="5" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
+                                    <input type="number" id="qty_isp" value="1" min="0" max="5" oninput="calculateRAB()" class="w-16 px-2 py-1 text-center border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono no-print">
                                     <span class="hidden print:inline font-mono">1 Jalur</span>
                                 </td>
                                 <td class="p-4 text-right font-mono text-xs">
@@ -684,10 +704,10 @@
                     <div class="text-center md:text-left">
                         <span class="text-xs font-bold text-brand-300 uppercase tracking-widest">Grand Total Pengadaan</span>
                         <h4 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-1">
-                            Rp <span id="grandTotalBudget">77,300,000</span>
+                            Rp <span id="grandTotalBudget">79,050,000</span>
                         </h4>
                         <p class="text-[11px] text-slate-400 mt-1">
-                            *Nilai di atas merupakan perkiraan berdasarkan acuan pasar (Q3 2026), harga final disesuaikan dengan vendor.
+                            *Nilai di atas merupakan perkiraan berdasarkan acuan pasar (Q3 2026), harga final disesuaikan dengan vendor resmi.
                         </p>
                     </div>
                     
@@ -837,12 +857,12 @@
                 </button>
             </div>
             <!-- Modal Image Content -->
-            <div class="overflow-y-auto p-4 flex-1 flex items-center justify-center bg-slate-100 dark:bg-slate-950">
+            <div id="modalImageContainer" class="overflow-y-auto p-4 flex-1 flex items-center justify-center bg-slate-100 dark:bg-slate-950">
                 <img 
+                    id="modalArchitectureDiagram"
                     src="Arsitektur-DLN.jfif" 
                     alt="Arsitektur Jaringan DLN Full" 
                     class="max-w-full max-h-[70vh] object-contain rounded-xl shadow"
-                    onerror="this.src='https://placehold.co/1000x500/0f172a/ffffff?text=Diagram+Arsitektur-DLN+Image';"
                 />
             </div>
             <!-- Modal Footer -->
@@ -958,15 +978,16 @@
             card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // INTERACTIVE RAB CALCULATOR ENGINE
+        // INTERACTIVE RAB CALCULATOR ENGINE (Mendukung RDS CAL 50 User Baru)
         function calculateRAB() {
             // Price matrix (Static IDR)
             const prices = {
                 dell: 17500000,
-                mt_core: 6000000,
+                mt_core: 7800000,
                 mt_branch: 2425000,
                 win_os: 1250000,
                 sql_server: 1250000,
+                rds: 1750000,
                 isp: 0
             };
             
@@ -976,6 +997,7 @@
             const qty_mt_branch = parseInt(document.getElementById('qty_mt_branch').value) || 0;
             const qty_win_os = parseInt(document.getElementById('qty_win_os').value) || 0;
             const qty_sql_server = parseInt(document.getElementById('qty_sql_server').value) || 0;
+            const qty_rds = parseInt(document.getElementById('qty_rds').value) || 0;
             const qty_isp = parseInt(document.getElementById('qty_isp').value) || 0;
             
             // Calculate totals
@@ -984,6 +1006,7 @@
             const tot_mt_branch = qty_mt_branch * prices.mt_branch;
             const tot_win_os = qty_win_os * prices.win_os;
             const tot_sql_server = qty_sql_server * prices.sql_server;
+            const tot_rds = qty_rds * prices.rds;
             const tot_isp = qty_isp * prices.isp;
             
             // Update UI elements
@@ -992,9 +1015,10 @@
             document.getElementById('total_mt_branch').innerText = tot_mt_branch.toLocaleString('id-ID');
             document.getElementById('total_win_os').innerText = tot_win_os.toLocaleString('id-ID');
             document.getElementById('total_sql_server').innerText = tot_sql_server.toLocaleString('id-ID');
+            document.getElementById('total_rds').innerText = tot_rds.toLocaleString('id-ID');
             document.getElementById('total_isp').innerText = tot_isp.toLocaleString('id-ID');
             
-            const grandTotal = tot_dell + tot_mt_core + tot_mt_branch + tot_win_os + tot_sql_server + tot_isp;
+            const grandTotal = tot_dell + tot_mt_core + tot_mt_branch + tot_win_os + tot_sql_server + tot_rds + tot_isp;
             document.getElementById('grandTotalBudget').innerText = grandTotal.toLocaleString('id-ID');
         }
 
